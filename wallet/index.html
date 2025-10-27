@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple E-Wallet (Local)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Simple E-Wallet</h1>
+      <div class="user-info" id="headerUser"></div>
+    </header>
+
+    <main>
+      <section class="auth card" id="authSection">
+        <h2>Account</h2>
+        <div class="auth-forms">
+          <div class="form">
+            <h3>Create account</h3>
+            <input id="createName" placeholder="Full name" />
+            <input id="createId" placeholder="User id (unique)" />
+            <button id="createBtn">Create Account</button>
+          </div>
+
+          <div class="form">
+            <h3>Login</h3>
+            <input id="loginId" placeholder="User id" />
+            <button id="loginBtn">Login</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="wallet card hidden" id="walletSection">
+        <h2>Wallet</h2>
+        <div class="wallet-top">
+          <div>
+            <div class="label">User</div>
+            <div id="userName" class="big"></div>
+            <div class="muted" id="userId"></div>
+          </div>
+          <div>
+            <div class="label">Balance</div>
+            <div id="balance" class="big balance">₱0.00</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="action">
+            <h4>Top-up</h4>
+            <input id="topupAmount" type="number" min="1" placeholder="Amount (₱)" />
+            <button id="topupBtn">Add Funds</button>
+          </div>
+
+          <div class="action">
+            <h4>Send</h4>
+            <input id="sendToId" placeholder="Recipient user id" />
+            <input id="sendAmount" type="number" min="1" placeholder="Amount (₱)" />
+            <button id="sendBtn">Send</button>
+          </div>
+
+          <div class="action">
+            <h4>Export</h4>
+            <button id="exportCsv">Export transactions (CSV)</button>
+            <button id="logoutBtn" class="danger">Logout</button>
+          </div>
+        </div>
+
+        <h3>Transaction History</h3>
+        <div class="tx-list" id="txList"></div>
+      </section>
+
+      <section class="users card">
+        <h3>Local Users</h3>
+        <div id="usersList" class="users-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Local demo only — data saved to your browser (localStorage). Not for real payments.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
