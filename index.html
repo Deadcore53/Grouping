@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Board Game Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Custom Board Game Prototype</h1>
+  <div class="wrapper">
+    <div>
+      <div class="board" id="board"></div>
+      <div class="footer">
+        Rules: Roll dice → Move token → Follow cell action → Reach the last cell to win.
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="panel">
+        <strong>Setup</strong>
+        <p>Players: <span id="playerCount"></span></p>
+        <p>Dice sides: <span id="diceSides"></span></p>
+        <p>Board cells: <span id="cellsCount"></span></p>
+      </div>
+
+      <div class="panel">
+        <strong>Players</strong>
+        <div class="players" id="players"></div>
+        <div class="controls">
+          <button id="rollBtn">Roll Dice</button>
+          <div id="diceResult">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <strong>Cards</strong>
+        <div id="cardsList"></div>
+      </div>
+
+      <div class="panel">
+        <strong>Game Log</strong>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
